@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MapIt</title>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="myStyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=drawing&callback=initMap"
+    ></script>
+    <div id="container">
+      <div class="header">
+        <h1>MapIt</h1>
+      </div>
+      <div class="infoAndFindBtns">
+        <!--shows alert-window with little info of how to use the app  -->
+        <button class="infoBtn" onclick="getInfo()" type="button">
+          Info
+        </button>
+        <!--if user allows geolocation and browser also supports that, user can find their current location on the map-->
+        <button class="findBtn" onclick="findMe()" type="button">
+          Find me
+        </button>
+      </div>
+      <div class="searchPlaces">
+        <input
+          type="text"
+          placeholder="Search your places by title"
+          name="searchPlaces"
+          id="searchPlaces"
+        />
+        <!--searches added places on the map by the given title name  -->
+        <button onclick="searchPlaces()" type="button">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+    <div class="footer">
+      MapIT uses
+      <a href="https://developers.google.com/maps/documentation"
+        >Google Maps API.</a
+      >
+    </div>
+  </body>
+</html>
